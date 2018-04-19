@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Matching Game v.1</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Permanent+Marker">
+</head>
+
+<body>
+    <div class="page-container">
+
+        <div class="timer">0:00</div>
+
+        <div class="welcome-container">
+            <div class="welcome">
+                <h1>Hi! It's Matching Game!</h1>
+                <p class="welcome-rules">The memory game is a basic matching game to test the player's memory. In a deck of paired cards, the player
+                    needs to match each pair fast as they can to win the game.</p>
+                <input type="button" value="OK" onclick="hideWelcome();">
+            </div>
+        </div>
+
+        <div class="profile-container">
+            <form class="profile-form">
+                <div class="profile-form_fields">
+
+                    <div class="profile-text_inputs">
+                        <label for="profile-name">Name
+                        <input type="text" id="profile-name" placeholder="your name">
+                        </label>
+                        <label for="profile-last_name">Last Name
+                        <input type="text" id="profile-last_name" placeholder="your last name">
+                        </label>
+                        <label for="profile-email">Email
+                        <input type="email" id="profile-email" placeholder="your email">
+                        </label>
+                    </div>
+
+                    <div class="profile-checkboxes">
+                        <p>Choose skirt :</p>
+                        <div class="profile-checkboxes_skirt">
+                            <input type="radio" id="profile-skirt1" name="skirt" value="skirt1" checked>
+                            <label for="profile-skirt1"></label>
+                            <input type="radio" id="profile-skirt2" name="skirt" value="skirt2">
+                            <label for="profile-skirt2"></label>
+                        </div>
+                        <p>Choose field :</p>
+                        <div class="profile-checkboxes_difficulty">
+                            <input type="radio" id="profile-difficulty1" name="difficulty" value="difficulty1" checked>
+                            <label for="profile-difficulty1">4 x 3</label>
+                            <input type="radio" id="profile-difficulty2" name="difficulty" value="difficulty2">
+                            <label for="profile-difficulty2">6 x 3</label>
+                        </div>
+                    </div>
+                </div>
+                <input type="submit" value="START!" onclick="event.preventDefault(); profileSubmit();">
+            </form>
+        </div>
+
+        <div class="cards-field">
+
+            <div class="card">
+                <div class="front side"></div>
+                <div class="back side card-value-1">
+                    <p>1</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="front side"></div>
+                <div class="back side card-value-1">
+                    <p>1</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="front side"></div>
+                <div class="back side card-value-2">
+                    <p>2</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="front side"></div>
+                <div class="back side card-value-2">
+                    <p>2</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="front side"></div>
+                <div class="back side card-value-3">
+                    <p>3</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="front side"></div>
+                <div class="back side card-value-3">
+                    <p>3</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="front side"></div>
+                <div class="back side card-value-4">
+                    <p>4</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="front side"></div>
+                <div class="back side card-value-4">
+                    <p>4</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="front side"></div>
+                <div class="back side card-value-5">
+                    <p>5</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="front side"></div>
+                <div class="back side card-value-5">
+                    <p>5</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="front side"></div>
+                <div class="back side card-value-6">
+                    <p>6</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="front side"></div>
+                <div class="back side card-value-6">
+                    <p>6</p>
+                </div>
+            </div>
+            <div class="card extra-card">
+                <div class="front side"></div>
+                <div class="back side card-value-7">
+                    <p>7</p>
+                </div>
+            </div>
+            <div class="card extra-card">
+                <div class="front side"></div>
+                <div class="back side card-value-7">
+                    <p>7</p>
+                </div>
+            </div>
+            <div class="card extra-card">
+                <div class="front side"></div>
+                <div class="back side card-value-8">
+                    <p>8</p>
+                </div>
+            </div>
+            <div class="card extra-card">
+                <div class="front side"></div>
+                <div class="back side card-value-8">
+                    <p>8</p>
+                </div>
+            </div>
+            <div class="card extra-card">
+                <div class="front side"></div>
+                <div class="back side card-value-9">
+                    <p>9</p>
+                </div>
+            </div>
+            <div class="card extra-card">
+                <div class="front side"></div>
+                <div class="back side card-value-9">
+                    <p>9</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="congratulation">
+            <p class="congratulation_current-time">Your time is -
+                <span>0:00</span>!
+            </p>
+            <h3>4 x 3 Top results</h3>
+            <ul class="congratulation_high-score">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <input class="congratulation_restart" type="button" value="Restart!" onClick='parent.location="javascript:location.reload()"'>
+        </div>
+    </div>
+    <script src="scripts/script.js"></script>
+</body>
+
+</html>
